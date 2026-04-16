@@ -47,4 +47,38 @@ widget/
 
 ---
 
+## Demo 示例
+
+查看 [demo/](demo/) 文件夹，包含完整的演示项目
+
+### 运行 Demo
+
+```bash
+# 在 Android Studio 中打开 demo 模块
+# 运行项目即可查看效果
+```
+
+### 示例代码
+
+```kotlin
+// 基本使用
+PermissionDialog.Builder(context)
+    .setTitle("Asking for full control")
+    .addPermission(R.drawable.ic_menu_view, "View and control screen", "Can view and control screen")
+    .onDeny { /* 拒绝 */ }
+    .onAllow { /* 允许 */ }
+    .show()
+
+// 多权限项
+PermissionDialog.Builder(context)
+    .setTitle("Allow app to")
+    .addPermission(icon, "权限1", "描述1")
+    .addPermission(icon, "权限2", "描述2")
+    .setDenyText("Don't allow")
+    .setAllowText("Allow")
+    .show()
+```
+
+---
+
 更多组件持续更新中...
